@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa - Detalle del Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-container">
+                <a href="#">
+                    <img src="imagenes/logo.jpg" alt="Logo" class="logo-img">
+                </a>
+                <h1>Cuidado con el Perro</h1>
+            </div>
+            <div class="right-container">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="carrito.html">Mi Carrito</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="product-detail">
+        <h2>Detalles del Producto</h2>
+        <!-- Producto 1 -->
+        <div id="producto1">
+            <img src="imagenes/img1.png" alt="Artículo 1" class="product-image">
+            <h3>Playera Estampada</h3>
+            <p>Precio: $20.00</p>
+            <p>Descripción: Playera de algodón 100% con estampado moderno.</p>
+            <h4>Materiales:</h4>
+            <p>Algodón</p>
+        </div>
+        <!-- Producto 2 -->
+        <div id="producto2">
+            <img src="imagenes/img2.png" alt="Artículo 2" class="product-image">
+            <h3>Abrigo Celeste</h3>
+            <p>Precio: $25.00</p>
+            <p>Descripción: Abrigo celeste de lana, ideal para el invierno.</p>
+            <h4>Materiales:</h4>
+            <p>Lana</p>
+        </div>
+        <!-- Producto 3 -->
+        <div id="producto3">
+            <img src="imagenes/img3.png" alt="Artículo 3" class="product-image">
+            <h3>Conjunto Gris</h3>
+            <p>Precio: $30.00</p>
+            <p>Descripción: Conjunto gris, cómodo y elegante para cualquier ocasión.</p>
+            <h4>Materiales:</h4>
+            <p>Poliéster y Algodón</p>
+        </div>
+        <!-- Producto 4 -->
+        <div id="producto4">
+            <img src="imagenes/img4.png" alt="Artículo 4" class="product-image">
+            <h3>Tenis Blancos</h3>
+            <p>Precio: $15.00</p>
+            <p>Descripción: Tenis blancos versátiles para el uso diario.</p>
+            <h4>Materiales:</h4>
+            <p>Cuero y Tela</p>
+        </div>
+        <!-- Producto 5 -->
+        <div id="producto5">
+            <img src="imagenes/img5.png" alt="Artículo 5" class="product-image">
+            <h3>Kit de Joyeria</h3>
+            <p>Precio: $5.00</p>
+            <p>Descripción: Kit de Joyeria, el mejor kit para ocaciones especiales.</p>
+            <h4>Materiales:</h4>
+            <p>Cuero</p>
+        </div>
+        <!-- Producto 6 -->
+        <div id="producto6">
+            <img src="imagenes/img6.png" alt="Artículo 6" class="product-image">
+            <h3>Jeans Grises</h3>
+            <p>Precio: $28.00</p>
+            <p>Descripción: Jeans grises cómodos y elegantes para un look casual.</p>
+            <h4>Materiales:</h4>
+            <p>Denim</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Política de Devoluciones</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suscríbete</h4>
+                <p>Recibe nuestras últimas ofertas y novedades:</p>
+                <input type="email" placeholder="Ingresa tu correo" />
+                <button type="submit">Suscribirme</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cuidado con el Perro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+    
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (currentScroll > lastScrollTop) {
+                // Desplazándose hacia abajo
+                header.classList.add('hidden');
+            } else {
+                // Desplazándose hacia arriba
+                header.classList.remove('hidden');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para Mobile or negative scrolling
+        });
+    </script>
+</body>
+</html>
+

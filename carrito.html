@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-container">
+                <a href="index.html">
+                    <img src="imagenes/logo.jpg" alt="Logo" class="logo-img">
+                </a>
+                <h1>Cuidado con el Perro</h1>
+            </div>
+            <div class="right-container">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="carrito.html">Mi Carrito</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart">
+        <h2>Mi Carrito</h2>
+        <div id="cart-items"></div>
+        <h3>Total: $<span id="total-price">0.00</span></h3>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Política de Devoluciones</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suscríbete</h4>
+                <p>Recibe nuestras últimas ofertas y novedades:</p>
+                <input type="email" placeholder="Ingresa tu correo" />
+                <button type="submit">Suscribirme</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cuidado con el Perro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsDiv = document.getElementById('cart-items');
+        let totalPrice = 0;
+
+        function updateCart() {
+            cartItemsDiv.innerHTML = ''; // Limpiar la vista actual del carrito
+            totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)}</p>
+                        <button class="remove-from-cart" data-index="${index}">Eliminar</button>
+                    </div>
+                `;
+
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Eliminar el producto del carrito
+            localStorage.setItem('cart', JSON.stringify(cart)); // Actualizar el carrito en localStorage
+            updateCart(); // Actualizar la vista del carrito
+        }
+
+        cartItemsDiv.addEventListener('click', (event) => {
+            if (event.target.classList.contains('remove-from-cart')) {
+                const index = event.target.getAttribute('data-index');
+                removeFromCart(index); // Llamar a la función para eliminar el producto
+            }
+        });
+
+        // Inicializar el carrito al cargar la página
+        updateCart();
+    </script>
+
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Desplazándose hacia abajo
+            header.classList.add('hidden');
+        } else {
+            // Desplazándose hacia arriba
+            header.classList.remove('hidden');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para Mobile or negative scrolling
+    });
+</script>
+</body>
+</html>

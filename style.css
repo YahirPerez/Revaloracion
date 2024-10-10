@@ -1,0 +1,357 @@
+a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto existente */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    color: rgb(32, 20, 20);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: rgb(32, 20, 20);
+}
+
+.search-bar {
+    margin-left: 20px;
+}
+
+.search-bar input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+section.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 40px;
+    padding: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.article {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.article h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.article p {
+    font-size: 1rem;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    section.gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section.gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+section.product-detail {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail h2 {
+    margin-top: 0;
+}
+
+.product-detail img.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.reviews {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h4 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonials {
+    padding: 20px;
+    background-color: #f0f0f0;
+    margin: 20px auto;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-top: 0;
+}
+
+.testimonials p {
+    font-style: italic;
+}
+
+/* Estilos para la sección de filtros en la página de productos */
+.search-filters {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-filters form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-filters label {
+    font-weight: bold;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+}
+
+
+#miCarrito {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Se oculta hasta que el usuario haga clic en "Mi Carrito" */
+}
+
+#miCarrito h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#miCarrito label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#miCarrito input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#miCarrito button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#miCarrito button:hover {
+    background-color: #555;
+}
+
+#total {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+html, body {
+    height: 100%; /* Asegura que el body ocupa todo el alto de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+}
+
+footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+
+.product-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.article {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px);
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.cart {
+    margin: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; /* Cambia esto si quieres un color diferente */
+    transition: transform 0.3s ease; /* Añade una transición suave */
+    z-index: 1000; /* Asegúrate de que el header esté por encima de otros elementos */
+}
+
+header.hidden {
+    transform: translateY(-100%); /* Oculta el header moviéndolo hacia arriba */
+}

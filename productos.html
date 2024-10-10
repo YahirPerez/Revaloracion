@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa - Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-container">
+                <a href="#">
+                    <img src="imagenes/logo.jpg" alt="Logo" class="logo-img">
+                </a>
+                <h1>Cuidado con el Perro</h1>
+            </div>
+            <div class="right-container">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="carrito.html">Mi Carrito</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="search-filters">
+        <h2>Filtrar Productos</h2>
+        <form>
+            <label for="category">Categoría:</label>
+            <select id="category">
+                <option value="todo">Todo</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
+            </select>
+            <label for="price">Precio:</label>
+            <input type="text" id="price" placeholder="Rango de precio">
+            <label for="size">Talla:</label>
+            <input type="text" id="size" placeholder="Talla">
+            <label for="color">Color:</label>
+            <input type="text" id="color" placeholder="Color">
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <section class="product-listing">
+        <h2>Listado de Productos</h2>
+        <div class="gallery">
+            <div class="article">
+                <a href="detalle_producto.html?producto=1">
+                    <img src="imagenes/img1.png" alt="Artículo 1">
+                    <h3>Playera Estampada</h3>
+                    <p>$20.00</p>
+                    <button class="add-to-cart" data-name="Playera Estampada" data-price="20" data-image="imagenes/img1.png">Agregar al Carrito</button>
+                </a>
+            </div>
+            <div class="article">
+                <a href="detalle_producto.html?producto=2">
+                    <img src="imagenes/img2.png" alt="Artículo 2">
+                    <h3>Abrigo Celeste</h3>
+                    <p>$25.00</p>
+                    <button class="add-to-cart" data-name="Abrigo Celeste" data-price="25" data-image="imagenes/img2.png">Agregar al Carrito</button>
+                </a>
+            </div>
+            <div class="article">
+                <a href="detalle_producto.html?producto=3">
+                    <img src="imagenes/img3.png" alt="Artículo 3">
+                    <h3>Conjunto Gris</h3>
+                    <p>$30.00</p>
+                    <button class="add-to-cart" data-name="Conjunto Gris" data-price="30" data-image="imagenes/img3.png">Agregar al Carrito</button>
+                </a>
+            </div>
+            <div class="article">
+                <a href="detalle_producto.html?producto=4">
+                    <img src="imagenes/img4.png" alt="Artículo 4">
+                    <h3>Tenis Blancos</h3>
+                    <p>$15.00</p>
+                    <button class="add-to-cart" data-name="Tenis Blancos" data-price="15" data-image="imagenes/img4.png">Agregar al Carrito</button>
+                </a>
+            </div>
+            <div class="article">
+                <a href="detalle_producto.html?producto=5">
+                    <img src="imagenes/img5.png" alt="Artículo 5">
+                    <h3>Kit de Joyeria</h3>
+                    <p>$5.00</p>
+                    <button class="add-to-cart" data-name="Kit de Joyeria" data-price="5" data-image="imagenes/img5.png">Agregar al Carrito</button>
+                </a>
+            </div>
+            <div class="article">
+                <a href="detalle_producto.html?producto=6">
+                    <img src="imagenes/img6.png" alt="Artículo 6">
+                    <h3>Jeans Grises</h3>
+                    <p>$28.00</p>
+                    <button class="add-to-cart" data-name="Jeans Grises" data-price="28" data-image="imagenes/img6.png">Agregar al Carrito</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#">« Anterior</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">Siguiente »</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Política de Devoluciones</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suscríbete</h4>
+                <p>Recibe nuestras últimas ofertas y novedades:</p>
+                <input type="email" placeholder="Ingresa tu correo" />
+                <button type="submit">Suscribirme</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cuidado con el Perro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-name');
+                const productPrice = parseFloat(button.getAttribute('data-price'));
+                const productImage = button.getAttribute('data-image');
+
+                // Agregar el producto al carrito
+                cart.push({ name: productName, price: productPrice, image: productImage });
+
+                // Guardar el carrito en localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(`${productName} ha sido agregado al carrito.`);
+            });
+        });
+    </script>
+
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Desplazándose hacia abajo
+            header.classList.add('hidden');
+        } else {
+            // Desplazándose hacia arriba
+            header.classList.remove('hidden');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para Mobile or negative scrolling
+    });
+</script>
+</body>
+</html>
